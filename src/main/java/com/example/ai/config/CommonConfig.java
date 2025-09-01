@@ -6,6 +6,7 @@ import dev.langchain4j.data.document.loader.ClassPathDocumentLoader;
 import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;
 
 import dev.langchain4j.data.document.parser.apache.pdfbox.ApachePdfBoxDocumentParser;
+import dev.langchain4j.data.document.parser.apache.tika.ApacheTikaDocumentParser;
 import dev.langchain4j.data.document.splitter.DocumentSplitters;
 import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.memory.chat.ChatMemoryProvider;
@@ -63,7 +64,7 @@ public class CommonConfig {
     @Bean
     public EmbeddingStore store(){//embeddingStore的对象, 这个对象的名字不能重复,所以这里使用store
         //1.加载文档进内存
-        List<Document> documents = ClassPathDocumentLoader.loadDocuments("content",new ApachePdfBoxDocumentParser());
+        List<Document> documents = ClassPathDocumentLoader.loadDocuments("content",new ApacheTikaDocumentParser());
         //2.构建向量数据库操作对象  操作的是内存版本的向量数据库
         InMemoryEmbeddingStore store = new InMemoryEmbeddingStore();
 

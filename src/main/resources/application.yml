@@ -1,0 +1,39 @@
+
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: sk-70d43e692513420b91bf4eecd68b0c56
+      model-name: qwen-plus
+      log-requests: true
+      log-responses: true
+    streaming-chat-model:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: sk-70d43e692513420b91bf4eecd68b0c56
+      model-name: qwen-plus
+      log-requests: true
+      log-responses: true
+    embedding-model:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: sk-70d43e692513420b91bf4eecd68b0c56
+      model-name: text-embedding-v3
+      log-requests: true
+      log-responses: true
+      max-segments-per-batch: 10
+
+  community:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    dev.langchain4j: debug
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: 251072
+      database: 2
